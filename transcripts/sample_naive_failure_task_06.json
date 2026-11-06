@@ -1,0 +1,63 @@
+{
+  "task_id": "task_06",
+  "title": "Claims-Made Insurance: Interrelated Prior Demand Deeming & 70/30 Soft Hammer",
+  "why_model_failed": "Requires linking a May 2026 class action back to an unreported Nov 2024 demand letter under the Section 5.1 Interrelated Claims Deeming Rule (barring coverage), drawing covered Defense Costs from Endorsement No. 1's $500k Supplemental Defense Allowance before eroding the $5M primary limit, and computing 70/30 co-insurance splits on both post-refusal defense costs and excess judgment under the Section 6.1 Soft Hammer Clause.",
+  "naive_model_output": {
+    "claims": {
+      "CLAIM-A": {
+        "is_covered": true,
+        "insurer_defense_payout_usd": 350000.0,
+        "insurer_indemnity_payout_usd": 1200000.0,
+        "insurer_total_payout_usd": 1550000.0,
+        "insured_out_of_pocket_usd": 100000.0
+      },
+      "CLAIM-B": {
+        "is_covered": true,
+        "insurer_defense_payout_usd": 200000.0,
+        "insurer_indemnity_payout_usd": 900000.0,
+        "insurer_total_payout_usd": 1100000.0,
+        "insured_out_of_pocket_usd": 100000.0
+      },
+      "CLAIM-C": {
+        "is_covered": true,
+        "insurer_defense_payout_usd": 340000.0,
+        "insurer_indemnity_payout_usd": 800000.0,
+        "insurer_total_payout_usd": 1140000.0,
+        "insured_out_of_pocket_usd": 760000.0
+      }
+    },
+    "total_insurer_payout_all_claims_usd": 3790000.0,
+    "total_insured_out_of_pocket_all_claims_usd": 960000.0,
+    "supplemental_defense_allowance_remaining_usd": 0.0,
+    "primary_policy_aggregate_limit_remaining_usd": 1710000.0
+  },
+  "reference_solution": {
+    "claims": {
+      "CLAIM-A": {
+        "is_covered": true,
+        "insurer_defense_payout_usd": 350000.0,
+        "insurer_indemnity_payout_usd": 1200000.0,
+        "insurer_total_payout_usd": 1550000.0,
+        "insured_out_of_pocket_usd": 100000.0
+      },
+      "CLAIM-B": {
+        "is_covered": false,
+        "insurer_defense_payout_usd": 0.0,
+        "insurer_indemnity_payout_usd": 0.0,
+        "insurer_total_payout_usd": 0.0,
+        "insured_out_of_pocket_usd": 1200000.0
+      },
+      "CLAIM-C": {
+        "is_covered": true,
+        "insurer_defense_payout_usd": 340000.0,
+        "insurer_indemnity_payout_usd": 1220000.0,
+        "insurer_total_payout_usd": 1560000.0,
+        "insured_out_of_pocket_usd": 340000.0
+      }
+    },
+    "total_insurer_payout_all_claims_usd": 3110000.0,
+    "total_insured_out_of_pocket_all_claims_usd": 1640000.0,
+    "supplemental_defense_allowance_remaining_usd": 0.0,
+    "primary_policy_aggregate_limit_remaining_usd": 2390000.0
+  }
+}

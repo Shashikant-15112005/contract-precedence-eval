@@ -1,0 +1,89 @@
+{
+  "task_id": "task_03",
+  "title": "Most Favored Nation (MFN) Effective Price & Retroactive Ratchet Audit",
+  "why_model_failed": "Requires filtering 5 comparator contracts against four distinct Section 4.3 exemptions (government entity, >120% volume tier, 3-year 100% upfront prepayment), computing Effective Annual Per-Seat Price under Section 4.2 by amortizing Year-1 signing rebates, free support credits, and waived onboarding fees, and applying quarterly retroactive ratchet-down adjustments across Q1\u2013Q4.",
+  "naive_model_output": {
+    "comparator_analysis": {
+      "DEAL-101": {
+        "effective_annual_seat_price_usd": 88.0,
+        "qualifies_for_mfn": false,
+        "exemption_reason": "gov_or_nonprofit"
+      },
+      "DEAL-102": {
+        "effective_annual_seat_price_usd": 92.0,
+        "qualifies_for_mfn": false,
+        "exemption_reason": "volume_over_120_pct"
+      },
+      "DEAL-103": {
+        "effective_annual_seat_price_usd": 115.0,
+        "qualifies_for_mfn": true,
+        "exemption_reason": "none"
+      },
+      "DEAL-104": {
+        "effective_annual_seat_price_usd": 85.0,
+        "qualifies_for_mfn": false,
+        "exemption_reason": "three_year_upfront"
+      },
+      "DEAL-105": {
+        "effective_annual_seat_price_usd": 100.0,
+        "qualifies_for_mfn": true,
+        "exemption_reason": "none"
+      }
+    },
+    "quarterly_applicable_seat_price_usd": {
+      "Q1": 120.0,
+      "Q2": 115.0,
+      "Q3": 100.0,
+      "Q4": 100.0
+    },
+    "quarterly_refund_due_usd": {
+      "Q1": 0.0,
+      "Q2": 3125.0,
+      "Q3": 12500.0,
+      "Q4": 12500.0
+    },
+    "total_year_1_refund_usd": 28125.0
+  },
+  "reference_solution": {
+    "comparator_analysis": {
+      "DEAL-101": {
+        "effective_annual_seat_price_usd": 88.0,
+        "qualifies_for_mfn": false,
+        "exemption_reason": "gov_or_nonprofit"
+      },
+      "DEAL-102": {
+        "effective_annual_seat_price_usd": 87.0,
+        "qualifies_for_mfn": false,
+        "exemption_reason": "volume_over_120_pct"
+      },
+      "DEAL-103": {
+        "effective_annual_seat_price_usd": 100.0,
+        "qualifies_for_mfn": true,
+        "exemption_reason": "none"
+      },
+      "DEAL-104": {
+        "effective_annual_seat_price_usd": 85.0,
+        "qualifies_for_mfn": false,
+        "exemption_reason": "three_year_upfront"
+      },
+      "DEAL-105": {
+        "effective_annual_seat_price_usd": 94.0,
+        "qualifies_for_mfn": true,
+        "exemption_reason": "none"
+      }
+    },
+    "quarterly_applicable_seat_price_usd": {
+      "Q1": 120.0,
+      "Q2": 100.0,
+      "Q3": 94.0,
+      "Q4": 94.0
+    },
+    "quarterly_refund_due_usd": {
+      "Q1": 0.0,
+      "Q2": 12500.0,
+      "Q3": 16250.0,
+      "Q4": 16250.0
+    },
+    "total_year_1_refund_usd": 45000.0
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "task_id": "task_02",
+  "title": "Dispute Notice Validity, Courier Cutoff & Dual-Jurisdiction Cure Window",
+  "category": "Notice Mechanics & Default Cure Calculation",
+  "difficulty": "Hard",
+  "why_hard": "Requires rejecting an acknowledged Oct 12 email notice under the Section 18.2(c) physical-courier mandate for default notices, applying the Section 18.3(b) post-5:00 PM ET courier dispatch rule (pushing Deemed Receipt to the 2nd Business Day, Oct 16), rejecting a partial escrow cure under Section 14.2, and excluding both New York and Mumbai banking holidays (Oct 20 & 21 in Exhibit C) across a 7-Business-Day accelerated cure window.",
+  "contract_text": "COMMERCIAL SUPPLY AND ESCROW RESERVE AGREEMENT\nDocument ID: CSERA-2026-109\nGoverning Law: State of New York\n\n1. DEFINITIONS AND TIME COMPUTATION RULES\n1.1 \"Business Day\" means any calendar day other than: (a) a Saturday or Sunday, or (b) a scheduled public banking holiday observed in EITHER New York, New York (USA) OR Mumbai, Maharashtra (India), as set forth in the agreed Holiday Schedule in Exhibit C.\n1.2 Time Computation Rule. Whenever this Agreement requires an act to be performed within a specified number of Business Days after a \"Deemed Receipt Date\", the Deemed Receipt Date itself is excluded from the count, and the period begins on the first Business Day following the Deemed Receipt Date. The cure period expires at 5:00 PM Eastern Time (ET) on the final Business Day of the period. A Party may exercise its right to terminate starting on the calendar day immediately following the expiration of the cure period if the default remains uncured at 5:00 PM ET on the cure deadline date.\n\n8. ESCROW RESERVE OBLIGATION\n8.1 Supplier shall maintain at all times a minimum cash balance of $500,000.00 in the Designated Escrow Account (\"Minimum Reserve\"). Any shortfall exceeding $100,000.00 below the Minimum Reserve constitutes an \"Escrow Reserve Deficiency\".\n\n14. DEFAULT, CURE PERIODS, AND TERMINATION\n14.1 General Cure Period. Except as provided in Section 14.3, upon any breach of this Agreement, the non-breaching Party may deliver a written Notice of Default, and the breaching Party shall have thirty (30) calendar days from the Deemed Receipt Date to cure such breach.\n14.2 Cure Verification Rule. A partial payment or partial replenishment of an Escrow Reserve Deficiency does NOT toll, extend, or satisfy the cure requirement unless the full deficiency is reduced to $0.00 prior to 5:00 PM ET on the final day of the applicable cure period.\n14.3 Accelerated Cure Override for Financial & Escrow Defaults. NOTWITHSTANDING SECTION 14.1, in the event of: (i) any failure to pay undisputed invoices exceeding $100,000.00, or (ii) any Escrow Reserve Deficiency under Section 8.1 exceeding $100,000.00, the applicable cure period shall be strictly SEVEN (7) BUSINESS DAYS following the Deemed Receipt Date of a valid Notice of Default delivered in compliance with Section 18.\n\n18. NOTICES AND DEEMED RECEIPT MECHANICS\n18.1 Permitted Delivery Methods for General Operational Communications. Routine operational communications may be sent via electronic mail or courier.\n18.2 Strict Formalities for Default, Termination, and Indemnity Notices. NOTWITHSTANDING SECTION 18.1, any Notice of Default under Section 14, Notice of Termination, or Notice of Indemnification Claim shall be legally ineffective and void unless delivered in physical hard copy via internationally recognized overnight courier (e.g., FedEx, DHL) or certified mail. Electronic mail (email) alone, even if acknowledged or read by an officer of the recipient, SHALL NOT constitute valid notice for purposes of triggering any cure period under Section 14.\n18.3 Deemed Receipt Date for Overnight Courier. A formal physical Notice dispatched via internationally recognized overnight courier shall be deemed received (\"Deemed Receipt Date\"):\n  (a) On the FIRST (1st) Business Day following the calendar date of dispatch, provided the courier package is tendered to the carrier prior to 5:00 PM Eastern Time (ET) on a Business Day; or\n  (b) On the SECOND (2nd) Business Day following the calendar date of dispatch, if the courier package is tendered to the carrier at or after 5:00 PM Eastern Time (ET), or if tendered on a day that is not a Business Day.\n\nEXHIBIT C \u2014 AGREED OCTOBER & NOVEMBER 2026 BANKING HOLIDAY SCHEDULE\nFor purposes of Section 1.1, the Parties stipulate that the following dates (and only the following dates) in October and November 2026 are public banking holidays in New York or Mumbai:\n- Monday, October 12, 2026: Columbus Day / Indigenous Peoples' Day (New York Banking Holiday)\n- Tuesday, October 20, 2026: Dussehra / Vijayadashami (Mumbai Banking Holiday)\n- Wednesday, October 21, 2026: Diwali Laxmi Pujan Observed (Mumbai Banking Holiday)\n- Wednesday, November 11, 2026: Veterans Day (New York Banking Holiday)\n- Thursday, November 26, 2026: Thanksgiving Day (New York Banking Holiday)\n",
+  "prompt_text": "You are disputes counsel advising Buyer on the exact timeline and validity of a termination for default under the attached Commercial Supply and Escrow Reserve Agreement (`CSERA-2026-109`).\n\n### Factual Scenario\n1. On **Friday, October 9, 2026**, the Escrow Agent notifies Buyer and Supplier that the Designated Escrow Account balance has dropped to **$320,000.00** (an Escrow Reserve Deficiency of **$180,000.00** below the $500,000.00 Minimum Reserve under Section 8.1).\n2. On **Monday, October 12, 2026 at 10:30 AM ET**, Buyer's General Counsel sends an urgent email to Supplier's CEO titled *\"Formal Notice of Default Under Section 14\"*, demanding cure of the $180,000.00 deficiency. Supplier's CEO replies by email at 11:15 AM ET acknowledging receipt of the email.\n3. Realizing the procedural rules in Section 18, Buyer's General Counsel dispatches a physical hard-copy Notice of Default via FedEx Priority Overnight on **Wednesday, October 14, 2026 at 6:20 PM ET** (18:20 ET).\n4. On **Monday, October 26, 2026 at 2:00 PM ET**, Supplier wires **$110,000.00** into the Escrow Account (bringing the balance to $430,000.00, leaving a remaining shortfall of $70,000.00) and claims that because the remaining shortfall is now under $100,000.00, the default is cured or converted to a 30-day cure period.\n\n### Instructions\nDetermine the exact procedural and legal outcomes under the Agreement:\n- Whether the October 12, 2026 email notice legally triggered the cure period.\n- Which cure period length applies (and how many days), and whether Supplier's partial wire on October 26 cured or extended the deadline.\n- The exact `deemed_receipt_date` (YYYY-MM-DD) of the valid Notice of Default under Section 18.3.\n- The exact list of `counted_cure_business_days` (YYYY-MM-DD strings in chronological order) that make up the cure window, using Exhibit C and Section 1.1\u20131.2.\n- The final `cure_deadline_date` (YYYY-MM-DD, expiring at 5:00 PM ET) and the `earliest_lawful_termination_date` (YYYY-MM-DD) under Section 1.2.\n\nReturn ONLY a valid JSON object matching this exact schema:\n```json\n{\n  \"email_notice_oct_12_valid\": <boolean>,\n  \"applicable_cure_period_business_days\": <int>,\n  \"partial_payment_oct_26_cures_or_extends\": <boolean>,\n  \"deemed_receipt_date\": \"<YYYY-MM-DD>\",\n  \"excluded_holiday_dates_during_window\": [\"<YYYY-MM-DD>\", ...],\n  \"counted_cure_business_days\": [\"<YYYY-MM-DD>\", ...],\n  \"cure_deadline_date\": \"<YYYY-MM-DD>\",\n  \"earliest_lawful_termination_date\": \"<YYYY-MM-DD>\"\n}\n```",
+  "reference": {
+    "email_notice_oct_12_valid": false,
+    "applicable_cure_period_business_days": 7,
+    "partial_payment_oct_26_cures_or_extends": false,
+    "deemed_receipt_date": "2026-10-16",
+    "excluded_holiday_dates_during_window": [
+      "2026-10-20",
+      "2026-10-21"
+    ],
+    "counted_cure_business_days": [
+      "2026-10-19",
+      "2026-10-22",
+      "2026-10-23",
+      "2026-10-26",
+      "2026-10-27",
+      "2026-10-28",
+      "2026-10-29"
+    ],
+    "cure_deadline_date": "2026-10-29",
+    "earliest_lawful_termination_date": "2026-10-30"
+  },
+  "naive_failure": {
+    "email_notice_oct_12_valid": false,
+    "applicable_cure_period_business_days": 7,
+    "partial_payment_oct_26_cures_or_extends": false,
+    "deemed_receipt_date": "2026-10-15",
+    "excluded_holiday_dates_during_window": [],
+    "counted_cure_business_days": [
+      "2026-10-16",
+      "2026-10-19",
+      "2026-10-20",
+      "2026-10-21",
+      "2026-10-22",
+      "2026-10-23",
+      "2026-10-26"
+    ],
+    "cure_deadline_date": "2026-10-26",
+    "earliest_lawful_termination_date": "2026-10-27"
+  }
+}

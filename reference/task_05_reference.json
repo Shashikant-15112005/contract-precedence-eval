@@ -1,0 +1,14 @@
+{
+  "unadjusted_gaap_ebitda_usd": 8300000.0,
+  "adjustments_usd": {
+    "item_tx_expenses": 400000.0,
+    "item_buyer_overhead": 350000.0,
+    "item_software_cap": -650000.0,
+    "item_litigation": 310000.0,
+    "item_deferred_rev": 390000.0
+  },
+  "net_total_adjustments_usd": 800000.0,
+  "final_adjusted_ebitda_usd": 9100000.0,
+  "ebitda_above_threshold_usd": 1100000.0,
+  "final_earnout_payout_usd": 3850000.0
+}

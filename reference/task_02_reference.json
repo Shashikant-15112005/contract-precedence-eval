@@ -1,0 +1,21 @@
+{
+  "email_notice_oct_12_valid": false,
+  "applicable_cure_period_business_days": 7,
+  "partial_payment_oct_26_cures_or_extends": false,
+  "deemed_receipt_date": "2026-10-16",
+  "excluded_holiday_dates_during_window": [
+    "2026-10-20",
+    "2026-10-21"
+  ],
+  "counted_cure_business_days": [
+    "2026-10-19",
+    "2026-10-22",
+    "2026-10-23",
+    "2026-10-26",
+    "2026-10-27",
+    "2026-10-28",
+    "2026-10-29"
+  ],
+  "cure_deadline_date": "2026-10-29",
+  "earliest_lawful_termination_date": "2026-10-30"
+}

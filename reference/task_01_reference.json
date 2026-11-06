@@ -1,0 +1,28 @@
+{
+  "general_cap_usd": 315000.0,
+  "initial_data_super_cap_usd": 945000.0,
+  "remaining_data_super_cap_after_erosion_usd": 630000.0,
+  "claims": {
+    "claim_sla_outage": {
+      "cap_category": "general_cap",
+      "consequential_damages_recoverable": false,
+      "recoverable_amount_usd": 315000.0
+    },
+    "claim_data_breach": {
+      "cap_category": "data_super_cap",
+      "consequential_damages_recoverable": false,
+      "recoverable_amount_usd": 630000.0
+    },
+    "claim_ip_indemnity": {
+      "cap_category": "uncapped",
+      "consequential_damages_recoverable": true,
+      "recoverable_amount_usd": 1250000.0
+    },
+    "claim_trade_secret_leak": {
+      "cap_category": "uncapped",
+      "consequential_damages_recoverable": true,
+      "recoverable_amount_usd": 315000.0
+    }
+  },
+  "total_recoverable_usd": 2510000.0
+}

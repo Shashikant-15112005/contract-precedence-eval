@@ -1,0 +1,33 @@
+{
+  "transactions": {
+    "TX-1": {
+      "triggers_section_16": true,
+      "qualifies_for_safe_harbor_no_consent": true,
+      "failed_safe_harbor_conditions": [],
+      "section_16_3_d_fee_usd": 200000.0
+    },
+    "TX-2": {
+      "triggers_section_16": true,
+      "qualifies_for_safe_harbor_no_consent": true,
+      "failed_safe_harbor_conditions": [],
+      "section_16_3_d_fee_usd": 0.0
+    },
+    "TX-3": {
+      "triggers_section_16": true,
+      "qualifies_for_safe_harbor_no_consent": false,
+      "failed_safe_harbor_conditions": [
+        "non_competitor"
+      ],
+      "section_16_3_d_fee_usd": 0.0
+    },
+    "TX-4": {
+      "triggers_section_16": true,
+      "qualifies_for_safe_harbor_no_consent": false,
+      "failed_safe_harbor_conditions": [
+        "tangible_net_worth",
+        "advance_notice"
+      ],
+      "section_16_3_d_fee_usd": 0.0
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "task_id": "task_04",
+  "title": "Anti-Assignment, Reverse Triangular Merger & Safe Harbor Net-Worth Proviso",
+  "why_model_failed": "Requires recognizing that a reverse triangular merger triggers Section 16.2 deemed assignment, verifying parent-guaranty cures for Tangible Net Worth (Total Assets minus Intangibles minus Liabilities), catching Affiliate attribution to a Schedule D Restricted Competitor, and applying the two-tier Section 16.3(d) transfer + scale surcharge ($75k + $125k = $200k vs $0 for internal restructurings).",
+  "naive_model_output": {
+    "transactions": {
+      "TX-1": {
+        "triggers_section_16": false,
+        "qualifies_for_safe_harbor_no_consent": true,
+        "failed_safe_harbor_conditions": [],
+        "section_16_3_d_fee_usd": 75000.0
+      },
+      "TX-2": {
+        "triggers_section_16": true,
+        "qualifies_for_safe_harbor_no_consent": true,
+        "failed_safe_harbor_conditions": [],
+        "section_16_3_d_fee_usd": 75000.0
+      },
+      "TX-3": {
+        "triggers_section_16": true,
+        "qualifies_for_safe_harbor_no_consent": false,
+        "failed_safe_harbor_conditions": [
+          "non_competitor"
+        ],
+        "section_16_3_d_fee_usd": 0.0
+      },
+      "TX-4": {
+        "triggers_section_16": true,
+        "qualifies_for_safe_harbor_no_consent": false,
+        "failed_safe_harbor_conditions": [
+          "advance_notice"
+        ],
+        "section_16_3_d_fee_usd": 0.0
+      }
+    }
+  },
+  "reference_solution": {
+    "transactions": {
+      "TX-1": {
+        "triggers_section_16": true,
+        "qualifies_for_safe_harbor_no_consent": true,
+        "failed_safe_harbor_conditions": [],
+        "section_16_3_d_fee_usd": 200000.0
+      },
+      "TX-2": {
+        "triggers_section_16": true,
+        "qualifies_for_safe_harbor_no_consent": true,
+        "failed_safe_harbor_conditions": [],
+        "section_16_3_d_fee_usd": 0.0
+      },
+      "TX-3": {
+        "triggers_section_16": true,
+        "qualifies_for_safe_harbor_no_consent": false,
+        "failed_safe_harbor_conditions": [
+          "non_competitor"
+        ],
+        "section_16_3_d_fee_usd": 0.0
+      },
+      "TX-4": {
+        "triggers_section_16": true,
+        "qualifies_for_safe_harbor_no_consent": false,
+        "failed_safe_harbor_conditions": [
+          "tangible_net_worth",
+          "advance_notice"
+        ],
+        "section_16_3_d_fee_usd": 0.0
+      }
+    }
+  }
+}

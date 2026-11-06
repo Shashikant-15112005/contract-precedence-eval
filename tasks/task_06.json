@@ -1,0 +1,67 @@
+{
+  "task_id": "task_06",
+  "title": "Claims-Made Insurance: Interrelated Prior Demand Deeming & 70/30 Soft Hammer",
+  "category": "Insurance Coverage & Claims-Made Endorsements",
+  "difficulty": "Hard",
+  "why_hard": "Requires linking a May 2026 class action back to an unreported Nov 2024 demand letter under the Section 5.1 Interrelated Claims Deeming Rule (barring coverage), drawing covered Defense Costs from Endorsement No. 1's $500k Supplemental Defense Allowance before eroding the $5M primary limit, and computing 70/30 co-insurance splits on both post-refusal defense costs and excess judgment under the Section 6.1 Soft Hammer Clause.",
+  "contract_text": "EXECUTIVE & PROFESSIONAL LIABILITY INSURANCE POLICY (CLAIMS-MADE AND REPORTED)\nPolicy Number: EPL-2026-9904\nInsured: Sterling FinTech Solutions Inc.\n\nDECLARATIONS\n- Policy Period: January 1, 2026 (12:01 AM) to December 31, 2026 (11:59 PM)\n- Automatic Extended Reporting Window: 45 calendar days after Policy Period expiration (through February 14, 2027) ONLY for Claims first made against the Insured during the Policy Period.\n- Retroactive Date: January 1, 2023\n- Prior & Pending Demand Date: January 1, 2025\n- Policy Aggregate Limit of Liability: $5,000,000.00\n- Per-Claim Self-Insured Retention (Deductible): $100,000.00 (Applies to each separate covered Claim; Insured must pay the first $100,000.00 of covered Loss/Defense Costs before Insurer's payment obligation attaches).\n\nSECTION I \u2014 INSURING AGREEMENT & TEMPORAL CONDITIONS\n1.1 Coverage Grant. Insurer shall pay Covered Loss (including Defense Costs and Settlements/Judgments) in excess of the Per-Claim Retention resulting from any Claim first made against the Insured during the Policy Period (Jan 1, 2026 \u2013 Dec 31, 2026) and reported to Insurer in writing during the Policy Period or within the 45-day Automatic Extended Reporting Window, provided the Wrongful Act occurred on or after the Retroactive Date (Jan 1, 2023).\n\nSECTION IV \u2014 DEFENSE COSTS & SUPPLEMENTAL DEFENSE ENDORSEMENT\n4.1 Defense Inside the Limits. Except as modified by Endorsement No. 1, all Defense Costs paid by Insurer are part of, and erode dollar-for-dollar, the $5,000,000.00 Policy Aggregate Limit.\n4.2 Endorsement No. 1 \u2014 Dedicated Supplemental Defense Allowance. NOTWITHSTANDING SECTION 4.1, the Policy provides a separate, additional aggregate allowance of FIVE HUNDRED THOUSAND DOLLARS ($500,000.00) (\"Supplemental Defense Allowance\") exclusively for covered Defense Costs (in excess of the applicable Per-Claim Retention). Covered Defense Costs paid by Insurer shall be drawn FIRST from this $500,000.00 Supplemental Defense Allowance before eroding a single dollar of the $5,000,000.00 Policy Aggregate Limit.\n\nSECTION V \u2014 INTERRELATED CLAIMS DEEMING RULE & PRIOR NOTICE EXCLUSION\n5.1 Interrelated Claims Single-Claim Deeming Rule. All Claims arising out of, based upon, or attributable to the same Wrongful Act or a series of logically or causally interrelated Wrongful Acts shall be deemed to be a SINGLE CLAIM, and such Single Claim shall be deemed to have been FIRST MADE on the earliest date on which the earliest of such interrelated Claims (including any written pre-suit demand letter for monetary or non-monetary relief) was first received by the Insured.\n5.2 Prior Demand / Prior & Pending Exclusion. No coverage shall apply to any Claim (or interrelated series of Claims under Section 5.1) deemed first made prior to the Policy Period (January 1, 2026) or involving any written demand or proceeding pending prior to the Prior & Pending Demand Date (January 1, 2025).\n\nSECTION VI \u2014 CONSENT TO SETTLE & 70/30 SOFT HAMMER CLAUSE\n6.1 Soft Hammer Co-Insurance Rule. If Insurer recommends a settlement of a covered Claim that is unconditionally acceptable to the claimant (\"Recommended Settlement Amount\"), and the Insured refuses to consent to such settlement and elects to continue litigating:\n  (a) Insurer's liability for Covered Loss shall be capped at:\n      (i) 100% of covered Defense Costs incurred up to the date of the Insured's refusal, PLUS the Recommended Settlement Amount (less the $100,000.00 Retention); PLUS\n      (ii) SEVENTY PERCENT (70%) of any additional covered Defense Costs incurred AFTER the date of refusal; PLUS\n      (iii) SEVENTY PERCENT (70%) of the amount by which any final judgment or subsequent settlement exceeds the Recommended Settlement Amount.\n  (b) The remaining THIRTY PERCENT (30%) of post-refusal Defense Costs and THIRTY PERCENT (30%) of the excess judgment/settlement above the Recommended Settlement Amount shall be borne solely by the Insured and shall not be covered under this Policy.\n",
+  "prompt_text": "You are coverage counsel calculating exact insurer payouts, insured out-of-pocket costs, and remaining policy limits across three claims (`CLAIM-A`, `CLAIM-B`, `CLAIM-C`) under the attached Claims-Made Professional Liability Policy (`EPL-2026-9904`).\n\n### Chronological Claims Submitted by Insured\n1. **`CLAIM-A` (Ledger Sync Software Defect \u2014 Settled Without Hammer Dispute):**\n   - **Wrongful Act Date:** March 15, 2024 (after the Jan 1, 2023 Retroactive Date).\n   - **First Written Demand / Lawsuit Received by Insured:** February 10, 2026.\n   - **Reported to Insurer:** February 18, 2026.\n   - **Financials:** Insured incurred **$450,000.00** in Defense Costs and settled the claim with Insurer's consent for **$1,200,000.00** (Total gross Loss + Defense Costs = **$1,650,000.00**).\n   - *Retention application rule:* Apply the $100,000.00 Per-Claim Retention to Defense Costs first (so Insured pays the first $100,000.00 of Defense Costs; Insurer pays the remaining $350,000.00 of Defense Costs + $1,200,000.00 settlement).\n\n2. **`CLAIM-B` (2026 Class Action Linked to a November 2024 Pre-Suit Demand Letter):**\n   - **Wrongful Act Date:** August 2024 (an algorithmic fee overcharge on enterprise accounts).\n   - **Prior Demand History:** On **November 12, 2024**, counsel for one enterprise customer sent Insured a written demand letter demanding a $45,000 refund and system remediation for the exact same August 2024 algorithmic fee overcharge. Insured did not report the Nov 2024 letter to any insurer.\n   - **Lawsuit Served:** On **May 4, 2026**, a class of enterprise customers (including the Nov 2024 claimant) served a formal lawsuit seeking damages for the same August 2024 algorithmic fee overcharge. Insured reported the lawsuit to Insurer on May 6, 2026.\n   - **Financials:** Insured incurred **$300,000.00** in Defense Costs and paid **$900,000.00** in settlement (Total = **$1,200,000.00**).\n\n3. **`CLAIM-C` (API Outage Lawsuit Invoking the Section 6.1 Soft Hammer Clause):**\n   - **Wrongful Act Date:** June 1, 2025 (unrelated to Claims A and B).\n   - **First Written Demand / Lawsuit Received:** November 10, 2026 (during Policy Period).\n   - **Reported to Insurer:** January 15, 2027 (within the 45-day Automatic Extended Reporting Window under Section 1.1).\n   - **Settlement Refusal & Final Judgment:**\n     - Up to the date of the settlement recommendation, Insured had incurred **$300,000.00** in Defense Costs.\n     - Claimant agreed in writing to settle for **$800,000.00** (\"Recommended Settlement Amount\"), and Insurer recommended accepting it.\n     - Insured **refused** to consent and continued litigating.\n     - After the refusal, Insured incurred an additional **$200,000.00** in post-refusal Defense Costs, and the court entered a final judgment of **$1,400,000.00** (which is **$600,000.00** in excess of the $800,000.00 Recommended Settlement Amount).\n     - *Retention & Allowance Ordering:* Apply the $100,000.00 Per-Claim Retention to the pre-refusal Defense Costs first. Draw covered Defense Costs paid by Insurer from whatever remains of the $500,000.00 Endorsement No. 1 Supplemental Defense Allowance before eroding the $5,000,000.00 Policy Aggregate Limit.\n\n### Instructions\nCalculate the exact coverage status, Insurer payout, Insured out-of-pocket exposure (including Retention, uncovered claims, and 30% Hammer co-insurance), and remaining Policy Aggregate Limit after all three claims are resolved.\n\nReturn ONLY a valid JSON object matching this exact schema:\n```json\n{\n  \"claims\": {\n    \"CLAIM-A\": {\n      \"is_covered\": <boolean>,\n      \"insurer_defense_payout_usd\": <float>,\n      \"insurer_indemnity_payout_usd\": <float>,\n      \"insurer_total_payout_usd\": <float>,\n      \"insured_out_of_pocket_usd\": <float>\n    },\n    \"CLAIM-B\": {\n      \"is_covered\": <boolean>,\n      \"insurer_defense_payout_usd\": <float>,\n      \"insurer_indemnity_payout_usd\": <float>,\n      \"insurer_total_payout_usd\": <float>,\n      \"insured_out_of_pocket_usd\": <float>\n    },\n    \"CLAIM-C\": {\n      \"is_covered\": <boolean>,\n      \"insurer_defense_payout_usd\": <float>,\n      \"insurer_indemnity_payout_usd\": <float>,\n      \"insurer_total_payout_usd\": <float>,\n      \"insured_out_of_pocket_usd\": <float>\n    }\n  },\n  \"total_insurer_payout_all_claims_usd\": <float>,\n  \"total_insured_out_of_pocket_all_claims_usd\": <float>,\n  \"supplemental_defense_allowance_remaining_usd\": <float>,\n  \"primary_policy_aggregate_limit_remaining_usd\": <float>\n}\n```",
+  "reference": {
+    "claims": {
+      "CLAIM-A": {
+        "is_covered": true,
+        "insurer_defense_payout_usd": 350000.0,
+        "insurer_indemnity_payout_usd": 1200000.0,
+        "insurer_total_payout_usd": 1550000.0,
+        "insured_out_of_pocket_usd": 100000.0
+      },
+      "CLAIM-B": {
+        "is_covered": false,
+        "insurer_defense_payout_usd": 0.0,
+        "insurer_indemnity_payout_usd": 0.0,
+        "insurer_total_payout_usd": 0.0,
+        "insured_out_of_pocket_usd": 1200000.0
+      },
+      "CLAIM-C": {
+        "is_covered": true,
+        "insurer_defense_payout_usd": 340000.0,
+        "insurer_indemnity_payout_usd": 1220000.0,
+        "insurer_total_payout_usd": 1560000.0,
+        "insured_out_of_pocket_usd": 340000.0
+      }
+    },
+    "total_insurer_payout_all_claims_usd": 3110000.0,
+    "total_insured_out_of_pocket_all_claims_usd": 1640000.0,
+    "supplemental_defense_allowance_remaining_usd": 0.0,
+    "primary_policy_aggregate_limit_remaining_usd": 2390000.0
+  },
+  "naive_failure": {
+    "claims": {
+      "CLAIM-A": {
+        "is_covered": true,
+        "insurer_defense_payout_usd": 350000.0,
+        "insurer_indemnity_payout_usd": 1200000.0,
+        "insurer_total_payout_usd": 1550000.0,
+        "insured_out_of_pocket_usd": 100000.0
+      },
+      "CLAIM-B": {
+        "is_covered": true,
+        "insurer_defense_payout_usd": 200000.0,
+        "insurer_indemnity_payout_usd": 900000.0,
+        "insurer_total_payout_usd": 1100000.0,
+        "insured_out_of_pocket_usd": 100000.0
+      },
+      "CLAIM-C": {
+        "is_covered": true,
+        "insurer_defense_payout_usd": 340000.0,
+        "insurer_indemnity_payout_usd": 800000.0,
+        "insurer_total_payout_usd": 1140000.0,
+        "insured_out_of_pocket_usd": 760000.0
+      }
+    },
+    "total_insurer_payout_all_claims_usd": 3790000.0,
+    "total_insured_out_of_pocket_all_claims_usd": 960000.0,
+    "supplemental_defense_allowance_remaining_usd": 0.0,
+    "primary_policy_aggregate_limit_remaining_usd": 1710000.0
+  }
+}

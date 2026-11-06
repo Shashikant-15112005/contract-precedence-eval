@@ -1,0 +1,33 @@
+{
+  "task_id": "task_05",
+  "title": "M&A Earn-Out Adjusted EBITDA & Specific Accounting Hierarchy Override",
+  "why_model_failed": "Requires enforcing a strict 3-tier Accounting Hierarchy where Schedule 2.6 Part I overrides US GAAP: capping transaction expense add-backs at $400k, subtracting the $120k historical baseline from Buyer overhead allocations, reversing $650k of GAAP-capitalized internal software dev payroll (mandatory 100% expensing), and rejecting an undisclosed post-closing OSHA fine add-back.",
+  "naive_model_output": {
+    "unadjusted_gaap_ebitda_usd": 8300000.0,
+    "adjustments_usd": {
+      "item_tx_expenses": 620000.0,
+      "item_buyer_overhead": 470000.0,
+      "item_software_cap": 0.0,
+      "item_litigation": 590000.0,
+      "item_deferred_rev": 390000.0
+    },
+    "net_total_adjustments_usd": 2070000.0,
+    "final_adjusted_ebitda_usd": 10370000.0,
+    "ebitda_above_threshold_usd": 2370000.0,
+    "final_earnout_payout_usd": 5250000.0
+  },
+  "reference_solution": {
+    "unadjusted_gaap_ebitda_usd": 8300000.0,
+    "adjustments_usd": {
+      "item_tx_expenses": 400000.0,
+      "item_buyer_overhead": 350000.0,
+      "item_software_cap": -650000.0,
+      "item_litigation": 310000.0,
+      "item_deferred_rev": 390000.0
+    },
+    "net_total_adjustments_usd": 800000.0,
+    "final_adjusted_ebitda_usd": 9100000.0,
+    "ebitda_above_threshold_usd": 1100000.0,
+    "final_earnout_payout_usd": 3850000.0
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "claims": {
+    "CLAIM-A": {
+      "is_covered": true,
+      "insurer_defense_payout_usd": 350000.0,
+      "insurer_indemnity_payout_usd": 1200000.0,
+      "insurer_total_payout_usd": 1550000.0,
+      "insured_out_of_pocket_usd": 100000.0
+    },
+    "CLAIM-B": {
+      "is_covered": false,
+      "insurer_defense_payout_usd": 0.0,
+      "insurer_indemnity_payout_usd": 0.0,
+      "insurer_total_payout_usd": 0.0,
+      "insured_out_of_pocket_usd": 1200000.0
+    },
+    "CLAIM-C": {
+      "is_covered": true,
+      "insurer_defense_payout_usd": 340000.0,
+      "insurer_indemnity_payout_usd": 1220000.0,
+      "insurer_total_payout_usd": 1560000.0,
+      "insured_out_of_pocket_usd": 340000.0
+    }
+  },
+  "total_insurer_payout_all_claims_usd": 3110000.0,
+  "total_insured_out_of_pocket_all_claims_usd": 1640000.0,
+  "supplemental_defense_allowance_remaining_usd": 0.0,
+  "primary_policy_aggregate_limit_remaining_usd": 2390000.0
+}

@@ -1,0 +1,76 @@
+# task_05: M&A Earn-Out Adjusted EBITDA & Specific Accounting Hierarchy Override
+
+**Category:** M&A Financial Schedules & Accounting Law | **Difficulty:** Hard
+
+## Why It's Hard
+Requires enforcing a strict 3-tier Accounting Hierarchy where Schedule 2.6 Part I overrides US GAAP: capping transaction expense add-backs at $400k, subtracting the $120k historical baseline from Buyer overhead allocations, reversing $650k of GAAP-capitalized internal software dev payroll (mandatory 100% expensing), and rejecting an undisclosed post-closing OSHA fine add-back.
+
+## Contract Document
+```text
+STOCK PURCHASE AGREEMENT — SCHEDULE 2.6 (EARN-OUT ACCOUNTING PRINCIPLES)
+Document ID: SPA-2026-EARNOUT
+Measurement Period: Fiscal Year 2026 (January 1, 2026 – December 31, 2026)
+
+1. EARN-OUT PAYOUT FORMULA
+1.1 Earn-Out Threshold: $8,000,000.00 of Adjusted EBITDA.
+1.2 Earn-Out Multiplier: For every $1.00 by which Final Adjusted EBITDA for Fiscal Year 2026 exceeds $8,000,000.00, Buyer shall pay Sellers $3.50, subject to a maximum Earn-Out Payout Cap of $5,250,000.00 (which corresponds to Final Adjusted EBITDA of $9,500,000.00 or higher).
+
+2. ACCOUNTING HIERARCHY OF PRECEDENCE (THE "GOVERNING HIERARCHY")
+2.1 In calculating Final Adjusted EBITDA, the Parties shall apply the following three-tier hierarchy in strict order of priority:
+  - Tier 1 (Highest Priority): The Specific Adjustments and Caps set forth in Part I of this Schedule 2.6;
+  - Tier 2 (Middle Priority): To the extent not addressed in Part I, the Historical Accounting Policies consistently applied by the Target Company in its audited Fiscal Year 2024 financial statements ("Historical Practice");
+  - Tier 3 (Lowest Priority): United States Generally Accepted Accounting Principles ("US GAAP").
+  CRITICAL OVERRIDE RULE: In the event of any conflict between US GAAP and Part I, Part I shall govern even if Part I deviates from US GAAP.
+
+3. PART I — SPECIFIC MANDATORY EBITDA ADJUSTMENTS
+Starting from Reported Unadjusted GAAP Operating Income (EBIT) plus Reported GAAP Depreciation & Amortization ("Unadjusted GAAP EBITDA"), the following specific adjustments (and only the following adjustments) shall be made:
+
+3.1 Transaction Advisory Expense Add-Back (Capped). One-time legal, investment banking, and tax advisory fees incurred by Target in connection with the closing of this Agreement ("Transaction Expenses") that were expensed in Unadjusted GAAP EBITDA shall be added back to EBITDA, PROVIDED THAT the aggregate add-back under this Section 3.1 shall not exceed FOUR HUNDRED THOUSAND DOLLARS ($400,000.00). Any Transaction Expenses in excess of $400,000.00 shall remain deducted as an expense.
+
+3.2 Post-Closing Buyer Overhead Allocation Exclusion. Any corporate management fees, headquarters rent allocations, or executive overhead charged by Buyer to Target after Closing ("Buyer Overhead Allocation") shall be added back to EBITDA to the extent such allocation exceeds Target's pre-closing standalone audit and corporate insurance baseline of ONE HUNDRED TWENTY THOUSAND DOLLARS ($120,000.00) per year.
+
+3.3 Mandatory Full Expensing of Internal Software Development Costs (Anti-Capitalization Rule). NOTWITHSTANDING US GAAP (ASC 350-40), for purposes of calculating Final Adjusted EBITDA, ONE HUNDRED PERCENT (100%) of internal software engineering and development payroll costs incurred during Fiscal Year 2026 must be treated as current operating expenses reducing Adjusted EBITDA. Accordingly, any internal software development costs that were capitalized onto the balance sheet under US GAAP during Fiscal Year 2026 (and therefore excluded from operating expenses in Unadjusted GAAP EBITDA) MUST BE DEDUCTED from Unadjusted GAAP EBITDA. (Note: Because amortization of capitalized software is already added back inside Unadjusted GAAP EBITDA, deducting the newly capitalized principal amount prevents capitalizing operating payroll to inflate EBITDA).
+
+3.4 Litigation & Regulatory Settlement Add-Back Condition. Non-recurring litigation settlements or regulatory penalties expensed during Fiscal Year 2026 may be added back to EBITDA ONLY IF the underlying matter was expressly disclosed on Schedule 4.11 (Disclosed Pre-Closing Litigation) prior to Closing. Any settlement, fine, or penalty arising from an undisclosed matter or post-closing regulatory violation SHALL NOT be added back.
+
+3.5 Deferred Revenue Haircut Reversal. If purchase accounting under US GAAP (ASC 805) reduced Target's recognized Fiscal Year 2026 revenue from pre-closing deferred revenue contracts below the face value that Target would have recognized under Historical Practice ("Purchase Accounting Deferred Revenue Write-Down"), the full amount of that write-down shall be added back to Adjusted EBITDA.
+```
+
+## Task Prompt
+You are the independent accounting arbitrator resolving an Earn-Out dispute under Schedule 2.6 of the attached Stock Purchase Agreement (`SPA-2026-EARNOUT`).
+
+### Fiscal Year 2026 Financial Data for Target Company
+Buyer's GAAP income statement for Target for Fiscal Year 2026 reports:
+- **Reported GAAP Operating Income (EBIT):** `$6,850,000.00`
+- **Reported GAAP Depreciation & Amortization (D&A):** `$1,450,000.00`
+- **Reported Unadjusted GAAP EBITDA (`EBIT + D&A`):** `$8,300,000.00`
+
+An audit of the underlying ledger reveals the following five items recorded during Fiscal Year 2026:
+1. **Transaction Advisory Expenses (`item_tx_expenses`):** Target expensed **$620,000.00** of one-time legal and investment banking fees related to the closing of the SPA inside GAAP operating expenses.
+2. **Buyer Corporate Overhead Allocation (`item_buyer_overhead`):** Buyer charged Target **$470,000.00** in post-closing parent headquarters management overhead inside GAAP operating expenses (Target's historical pre-closing audit/insurance baseline under Section 3.2 is **$120,000.00**).
+3. **Capitalized Internal Software Development (`item_software_cap`):** Under US GAAP (ASC 350-40), Buyer capitalized **$650,000.00** of Fiscal Year 2026 internal software engineering payroll onto the balance sheet (meaning that $650,000.00 was NOT deducted as an operating expense in arriving at Reported Unadjusted GAAP EBITDA of $8,300,000.00; $130,000.00 of first-year amortization was included inside the $1,450,000.00 D&A line).
+4. **Litigation & Regulatory Costs (`item_litigation`):** Target expensed two legal resolution items in GAAP operating expenses:
+   - **$310,000.00** to settle the *Vance Patent Dispute*, which was expressly listed on Schedule 4.11 prior to Closing.
+   - **$280,000.00** for an OSHA workplace penalty resulting from an undisclosed post-closing inspection in August 2026 (NOT on Schedule 4.11).
+5. **ASC 805 Deferred Revenue Write-Down (`item_deferred_rev`):** Due to US GAAP purchase accounting fair-value adjustments, Target's FY2026 GAAP revenue was reduced by **$390,000.00** compared to what Target would have recognized from pre-closing customer contracts under Historical Practice.
+
+### Instructions
+Calculate the exact net dollar adjustment (`+` for add-back, `-` for deduction) for each of the five items under Schedule 2.6 Part I, the resulting `final_adjusted_ebitda_usd`, the `ebitda_above_threshold_usd`, and the `final_earnout_payout_usd` (subject to the $5,250,000.00 cap).
+
+Return ONLY a valid JSON object matching this exact schema:
+```json
+{
+  "unadjusted_gaap_ebitda_usd": <float>,
+  "adjustments_usd": {
+    "item_tx_expenses": <float>,
+    "item_buyer_overhead": <float>,
+    "item_software_cap": <float>,
+    "item_litigation": <float>,
+    "item_deferred_rev": <float>
+  },
+  "net_total_adjustments_usd": <float>,
+  "final_adjusted_ebitda_usd": <float>,
+  "ebitda_above_threshold_usd": <float>,
+  "final_earnout_payout_usd": <float>
+}
+```

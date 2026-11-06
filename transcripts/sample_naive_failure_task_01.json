@@ -1,0 +1,61 @@
+{
+  "task_id": "task_01",
+  "title": "SaaS MSA Multi-Tier Liability Cap, Super-Cap & Cross-Bucket Erosion",
+  "why_model_failed": "Requires resolving a 4-way clause interaction: (1) including one-time Implementation Fees in the Section 1.4/11.1 12-month lookback cap ($315k vs $270k), (2) applying Section 11.4 cross-bucket erosion where General Cap payouts reduce the 3x Data Super-Cap from $945k to $630k, (3) distinguishing Section 5 non-PII Confidentiality (uncapped + lost profits permitted under 11.5) from Section 6 PII Data Security (capped at remaining Super-Cap + lost profits barred).",
+  "naive_model_output": {
+    "general_cap_usd": 270000.0,
+    "initial_data_super_cap_usd": 810000.0,
+    "remaining_data_super_cap_after_erosion_usd": 810000.0,
+    "claims": {
+      "claim_sla_outage": {
+        "cap_category": "general_cap",
+        "consequential_damages_recoverable": false,
+        "recoverable_amount_usd": 270000.0
+      },
+      "claim_data_breach": {
+        "cap_category": "data_super_cap",
+        "consequential_damages_recoverable": false,
+        "recoverable_amount_usd": 780000.0
+      },
+      "claim_ip_indemnity": {
+        "cap_category": "uncapped",
+        "consequential_damages_recoverable": true,
+        "recoverable_amount_usd": 1250000.0
+      },
+      "claim_trade_secret_leak": {
+        "cap_category": "uncapped",
+        "consequential_damages_recoverable": false,
+        "recoverable_amount_usd": 220000.0
+      }
+    },
+    "total_recoverable_usd": 2520000.0
+  },
+  "reference_solution": {
+    "general_cap_usd": 315000.0,
+    "initial_data_super_cap_usd": 945000.0,
+    "remaining_data_super_cap_after_erosion_usd": 630000.0,
+    "claims": {
+      "claim_sla_outage": {
+        "cap_category": "general_cap",
+        "consequential_damages_recoverable": false,
+        "recoverable_amount_usd": 315000.0
+      },
+      "claim_data_breach": {
+        "cap_category": "data_super_cap",
+        "consequential_damages_recoverable": false,
+        "recoverable_amount_usd": 630000.0
+      },
+      "claim_ip_indemnity": {
+        "cap_category": "uncapped",
+        "consequential_damages_recoverable": true,
+        "recoverable_amount_usd": 1250000.0
+      },
+      "claim_trade_secret_leak": {
+        "cap_category": "uncapped",
+        "consequential_damages_recoverable": true,
+        "recoverable_amount_usd": 315000.0
+      }
+    },
+    "total_recoverable_usd": 2510000.0
+  }
+}
