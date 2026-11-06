@@ -9,17 +9,21 @@ AI evals (short for evaluations) are systematic test suites and quality checks u
 # What Evals Actually Do ?
 
 • Define Success: They force teams to explicitly write down what a "good" or "correct" AI response looks like before shipping code.
+
 • Catch Regressions: When you update a system prompt, switch to a new model, or tweak a retriever, evals tell you if your changes broke something that used to work.
-• Benchmark Models: Companies use them to compare different base models (like deciding whether to upgrade from Claude or OpenAI) to see which fits their use case       best.
+
+• Benchmark Models: Companies use them to compare different base models (like deciding whether to upgrade from Claude or OpenAI) to see which fits their use case best.
 
 # The Three Main Ways Evals Are Run:
 
 A) Code-Based Evals (Deterministic): Uses exact rules, regex patterns, or schema validation. (e.g., Did the AI output a valid JSON object? Did it include the required phone number?)
-B) LLM-as-a-Judge: Uses a stronger, specialized AI model to review and score the output of the target AI based on a rubric. (e.g., On a scale of 1 to 5, how polite and accurate is this customer service reply?)
-C) Human Evaluation: Having real product managers, domain experts, or users manually grade transcripts or edge cases. While expensive and slow, it provides the ultimate ground truth.
-                                     [* CONTRACT-PRECEDENCE-EVAL RUNS ON LLM AS A JUDGE]
 
-_______________________________________________________________________________________________________________________________________________
+B) LLM-as-a-Judge: Uses a stronger, specialized AI model to review and score the output of the target AI based on a rubric. (e.g., On a scale of 1 to 5, how polite and accurate is this customer service reply?)
+
+C) Human Evaluation: Having real product managers, domain experts, or users manually grade transcripts or edge cases. While expensive and slow, it provides the ultimate ground truth.
+                                     
+                                     [* CONTRACT-PRECEDENCE-EVAL RUNS ON LLM AS A JUDGE]
+_____________________________________________________________________________________________________________________________________________
  
 I took participation in micro1 Eval Hackathon where instead of building an AI agent, the goal is to design a rigorous, reproducible evaluation (5–10 tasks) in a   domain you know well that exposes a real, practical limitation of frontier AI models—and grades it reliably.
 
