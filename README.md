@@ -1,8 +1,8 @@
-__CONTRACT-PRECEDENCE-EVAL__
+# CONTRACT-PRECEDENCE-EVAL
 
-# Video Walkthrough Link: (https://drive.google.com/file/d/1_OxBmKleAipRW9Y_kkoaKPo-XS85V5xs/view?usp=sharing)
+>> Video Walkthrough Link: (https://drive.google.com/file/d/1_OxBmKleAipRW9Y_kkoaKPo-XS85V5xs/view?usp=sharing)
 
-|OVERVIEW ON EVAL|
+# Overview on Eval
 
 # What is an Eval ?
 
@@ -19,9 +19,9 @@ AI evals (short for evaluations) are systematic test suites and quality checks u
 A) Code-Based Evals (Deterministic): Uses exact rules, regex patterns, or schema validation. (e.g., Did the AI output a valid JSON object? Did it include the required phone number?)
 B) LLM-as-a-Judge: Uses a stronger, specialized AI model to review and score the output of the target AI based on a rubric. (e.g., On a scale of 1 to 5, how polite and accurate is this customer service reply?)
 C) Human Evaluation: Having real product managers, domain experts, or users manually grade transcripts or edge cases. While expensive and slow, it provides the ultimate ground truth.
-[* CONTRACT-PRECEDENCE-EVAL RUNS ON LLM AS A JUDGE]
+                                     [* CONTRACT-PRECEDENCE-EVAL RUNS ON LLM AS A JUDGE]
 
-___________________________________________________________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________________________________________
  
 I took participation in micro1 Eval Hackathon where instead of building an AI agent, the goal is to design a rigorous, reproducible evaluation (5–10 tasks) in a   domain you know well that exposes a real, practical limitation of frontier AI models—and grades it reliably.
 
@@ -40,7 +40,7 @@ Liquidated Damages & Liability Caps: Determining total recoverable damages where
 Termination Right Triggers: Evaluating whether a cure period was violated based on strict notice requirements.
 
 Why It Wins the Rubric: Output is structured JSON (e.g., {"deadline": "2026-12-04", "capped_liability_usd": 1500000, "carve_outs_triggered": ["gross_negligence"]}). Grader is 100% deterministic code (zero LLM-judge subjectivity).
-_______________________________________________________________________________________________________________________________________________
+
 # Contract-Precedence-Eval: Measuring Cross-Clause Override Blindness in Commercial Contracts
 
 ## 1. What It Tests
@@ -86,7 +86,8 @@ cd contract-precedence-eval
 # Results & Model Limitation Analysis :
 
                                                [Run Against Live Frontier Models]
-<img width="1443" height="460" alt="image" src="https://github.com/user-attachments/assets/213b65de-db9a-4d22-9276-b71026bdb29d" />
+
+Model (version, settings)Trials per taskPass rate (pass@1)pass^k (Consistency)Mean Partial CreditCost per full runOracle Reference (solve)1100.0%100.0%1.00$0.0000Naive Single-Pass Baseline10.0%0.0%0.47$0.0000gemini-3.8-flash (temp=0.2)311.1%0.0%0.55$0.0150gpt-4o (temp=0.2)333.3%0.0%0.71$0.1240
 
 # Cost and Runtime :
 
