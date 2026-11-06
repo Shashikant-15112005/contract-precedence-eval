@@ -84,13 +84,8 @@ The harness uses Python 3 standard library modules only (`json`, `urllib`, `re`,
 # Clone the repository
 git clone [https://github.com/](https://github.com/)<your-username>/contract-precedence-eval.git
 cd contract-precedence-eval
-_______________________________________________________________________________________________________________________________________________
 
-# 6 Results & Model Limitation Analysis :
-
-[Run Against Live Frontier Models]
-
-## Results & Model Limitation Analysis
+## 6. Results & Model Limitation Analysis
 
 ### Benchmark Summary Table
 
