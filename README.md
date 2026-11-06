@@ -89,7 +89,33 @@ cd contract-precedence-eval
 
                                                [Run Against Live Frontier Models]
 
-Model (version, settings)Trials per taskPass rate (pass@1)pass^k (Consistency)Mean Partial CreditCost per full runOracle Reference (solve)1100.0%100.0%1.00$0.0000Naive Single-Pass Baseline10.0%0.0%0.47$0.0000gemini-3.8-flash (temp=0.2)311.1%0.0%0.55$0.0150gpt-4o (temp=0.2)333.3%0.0%0.71$0.1240
+## Results & Model Limitation Analysis
+
+### Benchmark Summary Table
+
+| Model (version, settings) | Trials per task | Pass rate (pass@1) | pass^k (Consistency) | Mean Partial Credit | Cost per full run |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Oracle Reference (`solve`)** | 1 | **100.0%** | **100.0%** | **1.00** | $0.0000 |
+| **Naive Single-Pass Baseline** | 1 | **0.0%** | **0.0%** | **0.47** | $0.0000 |
+| **gemini-3.8-flash (temp=0.2)** | 3 | **11.1%** | **0.0%** | **0.55** | $0.0150 |
+| **gpt-4o (temp=0.2)** | 3 | **33.3%** | **0.0%** | **0.71** | $0.1240 |
+
+### Per-Task Breakdown Across Models
+
+| Task ID | Tested Model | Pass Rate | pass^k | Mean Partial Credit | Failure Analysis & Tripping Point |
+| :--- | :--- | :---: | :---: | :---: | :--- |
+| `task_01` | `gemini-3.8-flash` | 0.0% | 0.0% | 0.50 | **Missed Super-Cap Erosion:** Correctly identifies $315k General Cap, but awards full $780k PII breach claim without subtracting the $315k General Cap payout from the $945k Data Super-Cap (Section 11.4). |
+| `task_01` | `gpt-4o` | 33.3% | 0.0% | 0.69 | **Exception Scope Confusion:** Solves cap erosion in 1 trial, but bars $95k trade-secret lost profits permitted under Section 11.5(i). |
+| `task_02` | `gemini-3.8-flash` | 33.3% | 0.0% | 0.63 | **Courier Cutoff & Holidays:** Identifies Section 18.2 courier rule, but misses the 5:00 PM ET cutoff (Section 18.3(b)) and omits Mumbai holidays in Exhibit C. |
+| `task_02` | `gpt-4o` | 66.7% | 0.0% | 0.88 | **Partial Cure Extension Trap:** Correctly counts business days in 2 trials, but in 1 trial treats the $110k partial payment as extending the cure window. |
+| `task_03` | `gemini-3.8-flash` | 0.0% | 0.0% | 0.58 | **Headline Price Anchoring:** Correctly flags government and volume exemptions, but fails to amortize Year-1 signing rebates and fee waivers into net effective price (Section 4.2). |
+| `task_03` | `gpt-4o` | 0.0% | 0.0% | 0.71 | **Prepayment Exemption Misclassification:** Correctly amortizes rebates on Deal 103, but misses the 3-year full prepayment exemption on Deal 104. |
+| `task_04` | `gemini-3.8-flash` | 33.3% | 0.0% | 0.81 | **Scale Surcharge Omission:** Identifies parent guaranty cure for Tangible Net Worth, but omits the $125k scale surcharge for acquirers over $500M revenue (Section 16.3(d)). |
+| `task_04` | `gpt-4o` | 66.7% | 0.0% | 0.94 | **Merger Deemed Assignment:** Accurately classifies all 4 transactions in 2 trials; misses reverse triangular merger trigger in 1 trial. |
+| `task_05` | `gemini-3.8-flash` | 0.0% | 0.0% | 0.30 | **Accounting Hierarchy Inversion:** Fails to reverse $650k of GAAP-capitalized software dev payroll under Schedule 2.6 Part I, overpaying the earn-out by $1.4M+. |
+| `task_05` | `gpt-4o` | 0.0% | 0.0% | 0.40 | **Undisclosed Fine Add-Back:** Correctly caps advisory fees at $400k, but adds back an undisclosed post-closing OSHA fine barred under Section 3.4. |
+| `task_06` | `gemini-3.8-flash` | 0.0% | 0.0% | 0.47 | **Interrelated Claims Deeming Bar:** Overlooks the Nov 2024 demand letter connection under Section 5.1 (wrongfully finding coverage for Claim B). |
+| `task_06` | `gpt-4o` | 33.3% | 0.0% | 0.63 | **Soft Hammer Co-Insurance:** Correctly bars Claim B, but miscalculates the 70/30 co-insurance split on excess judgment over the recommended settlement. |
 
 # Cost and Runtime :
 
