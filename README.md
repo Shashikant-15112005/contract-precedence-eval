@@ -2,8 +2,6 @@
 
 >> Video Walkthrough Link: (https://drive.google.com/file/d/1_OxBmKleAipRW9Y_kkoaKPo-XS85V5xs/view?usp=sharing)
 
-# Overview on Eval
-
 # What is an Eval ?
 
 AI evals (short for evaluations) are systematic test suites and quality checks used to measure how well a large language model (LLM), generative AI application, or AI Agent performs on specific tasks.Think of them like unit tests in traditional software engineering or practice exams for a student. Because AI models produce free-form, probabilistic outputs rather than rigid code, evals help turn subjective "vibes" into objective data.
