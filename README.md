@@ -22,10 +22,9 @@ B) LLM-as-a-Judge: Uses a stronger, specialized AI model to review and score the
 
 C) Human Evaluation: Having real product managers, domain experts, or users manually grade transcripts or edge cases. While expensive and slow, it provides the ultimate ground truth.
                                      
-                                              [CONTRACT-PRECEDENCE-EVAL RUNS ON LLM AS A JUDGE]
-______________________________________________________________________________________________________________________________________________________________________
- 
-I took participation in micro1 Eval Hackathon where instead of building an AI agent, the goal is to design a rigorous, reproducible evaluation (5–10 tasks) in a   domain you know well that exposes a real, practical limitation of frontier AI models—and grades it reliably.
+                                     [***CONTRACT-PRECEDENCE-EVAL RUNS ON LLM AS A JUDGE***]
+
+### I took participation in micro1 Eval Hackathon where instead of building an AI agent, the goal is to design a rigorous, reproducible evaluation (5–10 tasks) in a   domain you know well that exposes a real, practical limitation of frontier AI models—and grades it reliably.
 
 # I chose Lawyer / Legal Compliance
 
@@ -43,7 +42,7 @@ Termination Right Triggers: Evaluating whether a cure period was violated based 
 
 Why It Wins the Rubric: Output is structured JSON (e.g., {"deadline": "2026-12-04", "capped_liability_usd": 1500000, "carve_outs_triggered": ["gross_negligence"]}). Grader is 100% deterministic code (zero LLM-judge subjectivity).
 
-# [Contract-Precedence-Eval: Measuring Cross-Clause Override Blindness in Commercial Contracts]
+# Contract-Precedence-Eval: Measuring Cross-Clause Override Blindness in Commercial Contracts
 
 ## 1. What It Tests
 **Contract-Precedence-Eval** measures whether frontier AI models can resolve **hierarchical cross-clause overrides** in commercial contracts—specifically when a general rule in one section is subordinated, carved out, or modified by a `"Notwithstanding"` clause, fee-erosion proviso, accounting hierarchy schedule, or endorsement located pages away.
