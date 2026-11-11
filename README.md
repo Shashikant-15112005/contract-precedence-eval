@@ -22,7 +22,7 @@ B) LLM-as-a-Judge: Uses a stronger, specialized AI model to review and score the
 
 C) Human Evaluation: Having real product managers, domain experts, or users manually grade transcripts or edge cases. While expensive and slow, it provides the ultimate ground truth.
                                      
-                                     [***CONTRACT-PRECEDENCE-EVAL RUNS ON LLM AS A JUDGE***]
+        [***CONTRACT-PRECEDENCE-EVAL RUNS ON LLM AS A JUDGE***]
 
 ### I took participation in micro1 Eval Hackathon where instead of building an AI agent, the goal is to design a rigorous, reproducible evaluation (5–10 tasks) in a   domain you know well that exposes a real, practical limitation of frontier AI models—and grades it reliably.
 
